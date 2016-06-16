@@ -1,0 +1,21 @@
+header {
+        background-color: black;
+    height: 50px;
+}
+.layout-wrap {
+    position: relative;
+    left: 10%;
+    right: 10%;
+    top: 20%;
+    bottom: 20%;
+}
+.layout-wrap input {
+    float: right;
+}
+body {
+    background-color: lightgray;
+}
+.page-body  {
+    background-color: gray;
+
+}
