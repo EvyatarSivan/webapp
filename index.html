@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Some WebApp</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="webapp.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="layout-wrap">
-            <a href="#"><img src="https://googledrive.com/host/0B6ZIsommzsgVMVA2MzdKUjN2S0U/logo-netcraft.svg" alt="netcraft"></a>
+            <a href="#"><img src="https://googledrive.com/host/0B6ZIsommzsgVMVA2MzdKUjN2S0U/logo-netcraft.svg"
+                             alt="netcraft"></a>
             <form class="search-box" method="get" action="http://www.google.com">
                 <input type="search" name="q" placeholder="search">
             </form>
@@ -18,8 +20,8 @@
         <div class="notifications">
         </div>
         <nav>
-            <div class="nav-section">
-                <p>Select Reporting Platform</p>
+            <div class="nav-section tab1">
+                <p>Select<br>Reporting Platform</p>
                 <div class="menu">
                     <div class="menu-hint">
                         <p>Choose QS report</p>
@@ -29,13 +31,11 @@
                         <li><a href="#">link</a></li>
                         <li><a href="#">link</a></li>
                         <li><a href="#">link</a></li>
-                        <li><a href="#">link</a></li>
-                        <li><a href="#">link</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="nav-section">
-                <p>Select Dashboard</p>
+            <div class="nav-section tab2">
+                <p>Select<br>Dashboard</p>
                 <div class="menu">
                     <div class="menu-hint">
                         <p>Choose dashboard</p>
@@ -50,8 +50,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="nav-section">
-                <p>Help &amp; Tutorials</p>
+            <div class="nav-section tab3">
+                <p>Help &amp;<br>Tutorials</p>
                 <div class="menu">
                     <div class="menu-hint">
                         <p>Choose guide</p>
@@ -68,26 +68,68 @@
             </div>
         </nav>
         <div class="tabs">
-            <ul>
-                <li><a href="#quick-reports">Quick Reports</a>
+            <ul class="tabsHint">
+                <li><a hrefs="http://www.netcraft.co.il/" target="thisiFrame">&#xf08e; Quick Reports</a>
                 </li>
-                <li><a href="#fmy-folders">My Folders</a>
+                <li><a hrefs="https://mail.google.com/mail/u/0/" target="thisiFrame">&#xf006; My Folders</a>
                 </li>
-                <li><a href="#my-team-folders">My Team Folders</a>
+                <li><a hrefs="https://piratebay.to/" target="thisiFrame">&#xf115; My Team Folders</a>
                 </li>
-                <li><a href="#public-folders">Public Folders</a>
+                <li><a hrefs="http://www.csszengarden.com/" target="thisiFrame">&#xf0c5; Public Folders</a>
                 </li>
             </ul>
-            <div id="quick-reports">
-            </div>
-            <div id="fmy-folders">
-            </div>
-            <div id="my-team-folders">
-            </div>
-            <div id="public-folders">
+            <div class="tab-content-new-wrapper">
+                <div class="wrapper-for-display-none">
+                    <div class="tab-util-wrapper">
+                        <select>
+                        </select>
+                        <div class="setting-expand-wrapper">
+                            <a href=""><img src="img/icons/expand.png"></a>
+                            <a href=""><img class="" src="img/icons/settings.png"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-wrapper">
+                    <div class="form-urls">
+                        <form>
+                            Report 01
+                            <div><label>Name</label>
+                                <input type="text"></div>
+                            <div><label>URL</label>
+                                <input type="text"></div>
+                        </form>
+                        <form>
+                            Report 02
+                            <div><label>Name</label>
+                                <input type="text"></div>
+                            <div><label>URL</label>
+                                <input type="text"></div>
+                        </form>
+                        <form>
+                            Report 03
+                            <div><label>Name</label>
+                                <input type="text"></div>
+                            <div><label>URL</label>
+                                <input type="text"></div>
+                        </form>
+                       <div class="form-buttons"> <label>Cancel</label>
+                        <label class="save-button">Save</label></div>
+                        <p class="url-exception-message">URL Incorrect!</p>
+                    </div>
+                </div>
+                <iframe src="" name="thisiFrame"></iframe>
+                <div id="quick-reports">
+                </div>
+                <div id="fmy-folders">
+                </div>
+                <div id="my-team-folders">
+                </div>
+                <div id="public-folders">
+                </div>
             </div>
         </div>
     </div>
-    
+    <script src="jquery-3.1.0.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

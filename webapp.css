@@ -1,21 +1,391 @@
-header {
-        background-color: black;
-    height: 50px;
+/*ok I need explanation on all of this fonts thing, and also how do I
+apply font only on icons, and another font (the right one) on rest of text*/
+@font-face {
+    font-family: 'icons';
+    src: url('/fonts/fonts/icons.eot?-3a50i6');
+    src: url('/fonts/fonts/icons.eot?#iefix-3a50i6') format('embedded-opentype'),
+    url('/fonts/fonts/icons.woff?-3a50i6') format('woff'),
+    url('/fonts/fonts/icons.ttf?-3a50i6') format('truetype'),
+    url('/fonts/fonts/icons.svg?-3a50i6#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
-.layout-wrap {
-    position: relative;
-    left: 10%;
-    right: 10%;
-    top: 20%;
-    bottom: 20%;
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-.layout-wrap input {
-    float: right;
+
+/*those next classes doesn't appear on html*/
+.icon-star-o:before {
+    content: "\f006";
 }
+
+.icon-external-link:before {
+    content: "\f08e";
+}
+
+.icon-copy:before {
+    content: "\f0c5";
+}
+
+.icon-folder-open-o:before {
+    content: "\f115";
+}
+
+html {
+    font-family: icons;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    /*why without this all viewport jumps right?*/
+}
+
 body {
-    background-color: lightgray;
+    padding: 10px;
+    background-image: url("/img/body-background.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.page-body  {
-    background-color: gray;
+
+.layout-wrap {
+    width: 85%;
+    margin: 0 auto;
+}
+
+header {
+    justify-content: center;
+    padding: 10px;
+    background-color: black;
+}
+
+header .layout-wrap {
+    display: flex; /*why this has to be?*/
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .search-box,
+header a {
 
 }
+
+.notifications {
+    background-color: #EBEBEB;
+    height: 1.5rem;
+    /*width: 10px;*/
+}
+
+.page-body {
+    background-color: hsla(31, 13%, 34%, 0.5);
+    /*width: 85%;*/
+    padding: 15px;
+    margin: 0px auto; /*another way?*/
+
+}
+
+/*3menus*/
+nav {
+    display: flex; /*ok somehow this thing is not applying on children*/
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tab1 {
+    background-image: url("img/icons/action-report-new.png");
+}
+
+.tab2 {
+    background-image: url("img/icons/action-report-top.png");
+}
+
+.tab3 {
+    background-image: url("img/icons/actions-help.png");
+}
+
+.nav-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    width: 31%;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 70px;
+    background-size: 30%;
+    justify-content: space-between;
+}
+
+.nav-section > p {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 60px;
+    font-size: 1.2rem;
+    display: flex;
+    color: white;
+}
+
+.menu {
+    position: relative;
+    padding: 10px;
+    font-size: 0.8rem;
+    background-color: #EBEBEB;
+    /*overflow: hidden;*/
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #000000;
+}
+
+.menu-hint {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-hint p {
+    margin: 0;
+}
+
+.action-list {
+    margin: 0;
+    box-sizing: border-box; /*does not inherit*/
+    position: absolute;
+    list-style: none;
+    color: black;
+    width: 100%;
+    padding: 0px 15px 0px 15px;
+    top: 36px;
+    left: 0;
+    display: none;
+    font-size: 0.8rem;
+    background-color: #FFFFFF;
+    text-decoration: none;
+}
+
+.action-list li {
+    border-bottom: 1px solid #F0F0F0;
+    padding: 10px;
+}
+
+.action-list li a {
+    text-decoration: none;
+}
+
+/*tabs*/
+
+.tabs ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.tabs ul li {
+    display: block;
+    background-color: #646464;
+    text-align: center;
+    width: 20%;
+}
+
+/*how to make anchor all over li? */
+.tabs ul li a {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    background-color: #EBEBEB !important;
+}
+
+.active a {
+    color: black !important;
+}
+
+.tab-content-new-wrapper {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    width: 100%;
+    height: 700px;
+    background-color: #EBEBEB;
+}
+
+.wrapper-for-display-none {
+    display: none;
+}
+
+.tab-util-wrapper {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 20%;
+}
+
+.setting-expand-wrapper {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-content: center;
+    height: 100%;
+    width: 80px;
+}
+
+.setting-expand-wrapper a {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 40px;
+}
+
+.setting-expand-wrapper img {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+}
+
+.setting-expand-wrapper a:first-child img {
+    padding: 12px
+}
+
+.setting-expand-wrapper img {
+    box-sizing: border-box;
+    weight: 100%;
+    padding: 10px;
+}
+
+.active-set {
+    background-color: #fff;
+    box-shadow: -2px 2px 4px 0px rgba(0, 0, 0, 0.35);
+    position: absolute;
+    padding-bottom: 22px !important;
+}
+
+iframe {
+    background-color: #000;
+    width: 100%;
+    height: 90%;
+}
+
+.article-wrapper {
+    /*display: none;*/
+    position: relative;
+    width: 100%;
+    /*height: 30%;*/
+    /*top: 73px;*/
+    /*background-color: #fff;*/
+}
+
+.form-urls {
+    position: absolute;
+    display: none;
+    box-sizing: border-box;
+    padding: 20px;
+    padding-bottom: 0;
+    box-shadow: -6px 11px 5px -3px rgba(0, 0, 0, 0.35);
+    /*left: 0;*/
+    width: 100%;
+    height: 280px;
+    background-color: #fff;
+}
+
+.form-urls form {
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 12px;
+    width: 100%;
+    background-color: #DCDADA;
+    display: flex;
+    justify-content: space-between;
+}
+.form-urls form div {
+    width: 40%;
+}
+.form-urls form input {
+    width: 86%;
+}
+.form-buttons {
+    display: flex;
+    float: right;
+    height: 40px;
+    width: 20%;
+    line-height: 27px;
+}
+.form-buttons label {
+    /*display: inline-block;*/
+    /*vertical-align: middle;*/
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    padding: 5px;
+    
+}
+.form-buttons label:last-child {
+    color: white;
+    background-color: black;
+}
+.url-exception-message {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    right: 20px;
+    bottom: -45px;
+    background-color: #F3F3F3;
+    border-radius: 7px 7px 7px 7px;
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border: 1px solid #000000;
+}
+
+.triangle {
+    width: 12px;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    top: 6px;
+    right: -1px;
+}
+
+
+
+
+
